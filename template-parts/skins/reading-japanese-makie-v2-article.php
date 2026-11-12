@@ -1,0 +1,30 @@
+<?php
+/**
+ * Native content in original article structure.
+ *
+ * @package Reading
+ */
+
+?>
+<article>
+<?php
+if ( has_post_thumbnail() ) {
+	the_post_thumbnail( 'large', array( 'class' => 'reading-featured-image' ) ); }
+?>
+<div class="article-head"><div class="eyebrow">PHOTOGRAPHY / 长篇随笔</div><h1><?php the_title(); ?></h1><p class="article-deck"><?php echo esc_html( has_excerpt() ? get_the_excerpt() : '' ); ?></p><div class="metadata">
+<?php
+echo esc_html( get_the_date() );
+echo ' / ';
+the_author_posts_link();
+?>
+</div></div><div aria-hidden="true" class="v2-article-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="360" height="100" fill="#111010"></rect><g stroke="#c69c50" stroke-width="2.1" fill="none"><path d="M0 96Q116 49 210 76Q274 95 360 18"></path><path d="M170 70q10-30 33-29m10 40q8-36 34-43"></path></g><circle cx="79" cy="48" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="262" cy="58" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="83" cy="71" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="197" cy="71" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="150" cy="53" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="230" cy="80" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="289" cy="48" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="114" cy="35" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="55" cy="58" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="77" cy="25" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="246" cy="27" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="320" cy="54" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="59" cy="80" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="280" cy="6" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="219" cy="94" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="54" cy="57" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="33" cy="36" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="18" cy="79" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="130" cy="54" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="84" cy="95" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="332" cy="8" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="164" cy="2" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="280" cy="16" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="43" cy="32" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="163" cy="98" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="278" cy="37" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="133" cy="91" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="127" cy="54" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="182" cy="41" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="36" cy="50" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="144" cy="7" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="254" cy="7" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="348" cy="44" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="45" cy="54" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="95" cy="45" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="30" cy="27" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="70" cy="93" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="300" cy="32" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="10" cy="47" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="268" cy="69" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="326" cy="79" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="138" cy="33" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="322" cy="19" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="66" cy="81" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="191" cy="6" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="331" cy="35" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="41" cy="16" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="209" cy="53" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="7" cy="68" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="338" cy="5" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="70" cy="1" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="302" cy="83" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="325" cy="58" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="127" cy="17" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="318" cy="93" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="303" cy="16" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="180" cy="0" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="179" cy="35" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="132" cy="37" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="48" cy="23" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="145" cy="69" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="198" cy="84" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="270" cy="24" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="325" cy="38" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="243" cy="18" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="71" cy="14" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="193" cy="81" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="269" cy="18" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="95" cy="89" r=".65" fill="#f1dc9c" opacity=".65"></circle><circle cx="343" cy="36" r=".65" fill="#f1dc9c" opacity=".65"></circle></svg></div><div class="v2-folio">READING EDITION / ARTICLE / MAKI-E / GOLD ON LACQUER</div><div class="article-body reading-content">
+<?php
+the_content();
+wp_link_pages(
+	array(
+		'before' => '<nav class="page-links">',
+		'after'  => '</nav>',
+	)
+);
+?>
+</div></article>

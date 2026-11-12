@@ -1,0 +1,172 @@
+
+:root{--rail:43px;--bg:#d2d2cc;--chrome:#deded8;--chromeLight:#f7f7f3;--paper:#fbfaf6;--line:#56564f;--dim:#77776f;--ink:#252520;--blue:#233b72;--soft:#eeeee7;--fs:15px;--leading:1.68;--drawer:min(47vw,188px)}
+*{box-sizing:border-box}html{height:100%;-webkit-text-size-adjust:100%}body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;font-size:13px}button,input{font:inherit;color:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #24518c;outline-offset:2px}
+/* The fixed vertical application bar */
+.rail{position:fixed;z-index:100;inset:0 auto 0 0;width:var(--rail);height:100dvh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);background:linear-gradient(90deg,#efefe9 0%,#d4d4cd 88%,#aaa9a1 100%);border-right:1px solid #64635b;display:flex;align-items:center;flex-direction:column;gap:0;box-shadow:1px 0 0 #fff9}
+.rail-brand{height:45px;width:100%;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #aaa99f;margin-bottom:8px}.brand-mark{width:25px;height:25px;border:1px solid #3d3d37;box-shadow:inset 1px 1px #fff,1px 1px #f7f7f2;background:#d8d8d1;position:relative;display:grid;place-items:center}.brand-mark:before{content:"";width:14px;height:15px;position:absolute;border:1px solid #53534d;background:#f9f9f4;top:3px;left:4px}.brand-mark:after{content:"";width:10px;height:1px;position:absolute;left:6px;top:9px;background:#585951;box-shadow:0 3px #585951,0 6px #585951}
+.rail-button{position:relative;width:34px;height:34px;margin:0 0 6px;border:1px solid #727169;border-top-color:#fff;border-left-color:#fff;border-right-color:#606059;border-bottom-color:#53534d;background:#e5e5de;display:grid;place-items:center;padding:0;border-radius:0;box-shadow:inset 1px 1px #f7f7f3,1px 1px #c0c0b8}.rail-button svg{width:17px;height:17px;stroke:#3e3e39;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;fill:none}.rail-button:hover{background:#f3f3ed}.rail-button:active,.rail-button.active{background:#c6c7c2;border-top-color:#65645e;border-left-color:#65645e;border-bottom-color:#fafaf6;border-right-color:#fafaf6;box-shadow:inset 1px 1px #96968e}.rail-button.active:before{content:"";position:absolute;left:-4px;top:9px;width:2px;height:13px;background:#3f517a}.rail-spacer{flex:1}.rail-foot{font:9px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#66665e;writing-mode:vertical-rl;transform:rotate(180deg);margin-bottom:15px;letter-spacing:.08em}
+/* The main content column */
+.shell{margin-left:var(--rail);min-height:100dvh;padding-bottom:calc(25px + env(safe-area-inset-bottom))}.app-top{height:49px;display:flex;align-items:center;justify-content:space-between;padding:7px 11px 6px 12px;gap:6px}.app-identity{min-width:0}.app-identity b{font-family:Georgia, "Times New Roman",serif;font-size:15px;font-weight:700;letter-spacing:.01em}.app-identity small{display:block;font-size:9px;letter-spacing:.1em;color:#62625a;margin-top:2px;font-family:ui-monospace,SFMono-Regular,monospace}.app-status{font-size:10px;color:#65645e;white-space:nowrap;text-align:right}.app-status strong{display:block;font-weight:500;font-size:11px;color:#31312b}
+.window{margin:0 9px 13px 9px;border:1px solid #4a4a46;box-shadow:1px 1px 0 #f6f6f1,-1px -1px 0 #f1f1eb,2px 2px 0 #9a9991;background:var(--paper);min-width:0}.window-title{min-height:29px;display:flex;align-items:center;gap:5px;border-bottom:1px solid #686760;padding:4px 6px;background:#e6e6e0}.grip{height:15px;flex:1;min-width:3px;background:repeating-linear-gradient(to bottom,#999991 0px,#999991 1px,#eeeeea 1px,#eeeeea 3px);opacity:.76}.window-label{font-size:11px;font-weight:650;white-space:nowrap;max-width:70%;overflow:hidden;text-overflow:ellipsis;padding:0 5px;background:#e6e6e0}.tiny-square{flex:0 0 auto;width:12px;height:12px;display:block;background:#e7e7e2;border:1px solid #53524c;box-shadow:inset 1px 1px #fff,1px 1px #b5b5ad;padding:0}.tiny-square:active{background:#babbb5}.title-square{position:relative}.title-square:after{content:"";position:absolute;inset:3px;border:1px solid #85867c}.window-toolbar{display:flex;align-items:center;gap:5px;min-height:30px;padding:5px 10px;border-bottom:1px solid #c6c5bd;background:#f4f3ed;flex-wrap:wrap}.crumb{font-size:10px;color:#6c6c64;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.small-button{font-size:10px;line-height:1.25;padding:3px 7px;min-height:21px;background:#e8e8e0;border:1px solid #6c6b63;border-top-color:#fff;border-left-color:#fff;box-shadow:inset 1px 1px #f8f8f4;border-radius:0;white-space:nowrap}.small-button:active{border:1px solid #6c6b63;border-bottom-color:#fff;border-right-color:#fff;background:#d1d1c9}.window-interior{padding:0}.inset{background:#f7f7f2;border:1px solid #a5a59b;box-shadow:inset 1px 1px #fff;margin:10px}
+.home-intro{padding:14px 13px 12px;border-bottom:1px solid #d1d0c7}.eyebrow{font-size:10px;letter-spacing:.13em;color:#6e6e65;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.home-intro h1{font-family:Georgia,"Songti SC","Noto Serif CJK SC",serif;font-size:25px;line-height:1.29;font-weight:600;letter-spacing:.02em;margin:7px 0 8px}.home-intro p{font-size:12px;line-height:1.77;color:#65645d;margin:0}.bar-caption{font-size:10px;letter-spacing:.06em;padding:8px 12px 6px;background:#eeeee7;color:#55554c;border-bottom:1px solid #cccac0;display:flex;align-items:center;justify-content:space-between}.bar-caption span:last-child{color:#8b8a80}.folder-list{background:#faf9f5}.folder-row{display:grid;grid-template-columns:20px minmax(0,1fr) 27px;align-items:center;gap:9px;padding:11px 11px;border-bottom:1px solid #e3e2da;min-height:58px}.folder-row:active,.folder-row:hover{background:#eaece9}.folder-ico{position:relative;width:17px;height:13px;background:#ece1b6;border:1px solid #8e8467;box-shadow:inset 1px 1px #fff9}.folder-ico:before{content:"";position:absolute;top:-4px;left:-1px;width:8px;height:4px;background:#ece1b6;border:1px solid #8e8467;border-bottom:0}.folder-name{font-size:13px;font-weight:620;letter-spacing:.015em}.folder-desc{font-size:10.5px;color:#77766e;line-height:1.5;margin-top:3px}.folder-count{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#999990;font-size:10px;text-align:right}
+.feature{padding:13px 12px 14px;background:#faf9f5}.feature-label{font-size:10px;color:#79796f;letter-spacing:.09em}.feature h2{font-size:18px;font-family:Georgia,"Songti SC",serif;font-weight:600;line-height:1.48;margin:8px 0}.feature p{font-size:12px;line-height:1.75;color:#5f5f57;margin:0 0 10px}.text-link{font-size:11px;display:inline-block;border-bottom:1px solid #77776c;padding-bottom:2px;color:#303a58}.entry-list{padding:0 0 3px;background:#faf9f5}.entry-row{display:block;padding:10px 12px;border-bottom:1px solid #e3e2da}.entry-row:last-child{border-bottom:0}.entry-row:active{background:#eceee9}.entry-title{font-size:12.5px;font-weight:600;line-height:1.45}.entry-sub{font-size:10px;color:#818076;line-height:1.5;margin-top:4px}.number{font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#97978f;margin-right:8px}.window-bottom{border-top:1px solid #bbb9b0;background:#eeede6;color:#77766e;display:flex;justify-content:space-between;padding:5px 9px;font:9px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+/* Section views */
+.section-hero{padding:15px 13px 16px;border-bottom:1px solid #d7d5ca}.section-hero h1{font-size:23px;line-height:1.35;margin:6px 0 7px;font-family:Georgia,"Songti SC",serif;font-weight:600}.section-hero p{font-size:12px;color:#66665e;line-height:1.7;margin:0}.section-entry{padding:15px 13px;border-bottom:1px solid #dfddd4;display:block}.section-entry:active{background:#edeee9}.section-entry h3{font-size:15px;line-height:1.45;margin:5px 0 6px;font-weight:600}.section-entry p{font-size:11.5px;color:#66665f;line-height:1.75;margin:0}.section-tag{font-size:10px;color:#83827a}
+/* Reading windows */
+.article-head{padding:19px 15px 16px;border-bottom:1px solid #dad8cf}.article-head .eyebrow{font-size:9px}.article-head h1{font-family:Georgia,"Songti SC","Noto Serif CJK SC",serif;font-weight:600;font-size:25px;line-height:1.38;letter-spacing:.005em;margin:9px 0 11px}.article-deck{font-size:13px;color:#64645c;line-height:1.72;margin:0 0 13px}.metadata{font-size:10px;color:#77766d;border-top:1px solid #dddcd3;padding-top:10px;display:flex;gap:8px;flex-wrap:wrap}.metadata span+span:before{content:"·";margin-right:8px;color:#a09f95}.article-body{font-size:var(--fs);line-height:var(--leading);letter-spacing:.006em;padding:5px 15px 19px;font-weight:400;overflow-wrap:anywhere}.article-body p{margin:16px 0}.article-body h2{font-family:Georgia,"Songti SC",serif;font-size:18px;font-weight:650;line-height:1.5;margin:28px 0 10px}.article-body h2:before{content:"";display:block;border-top:1px solid #aaa99e;width:32px;margin-bottom:12px}.article-body blockquote{border-left:2px solid #7b7a71;margin:20px 0;padding:1px 0 1px 12px;color:#65645d;font-family:Georgia,"Songti SC",serif;font-size:calc(var(--fs) + 1px);line-height:1.7}.article-refs{border-top:1px solid #deddd4;padding:12px 14px 15px;background:#f3f2eb}.article-refs b{font-size:11px;font-weight:600;display:block;margin-bottom:9px}.article-ref{display:block;font-size:12px;line-height:1.65;padding:7px 0;border-top:1px solid #e0dfd7;color:#313c5c}.article-ref span{float:right;font-size:10px;color:#8d8c83}
+/* The slide-out half-width inspection drawers */
+.scrim{position:fixed;z-index:48;top:0;right:0;bottom:0;left:var(--rail);background:rgba(50,51,45,.14);opacity:0;pointer-events:none;transition:opacity .15s}.scrim.visible{opacity:1;pointer-events:auto}.drawer{position:fixed;z-index:60;top:0;bottom:0;left:var(--rail);width:var(--drawer);max-width:47vw;background:#e9e9e2;border-right:1px solid #56564f;box-shadow:2px 0 0 #fff9,4px 0 12px #0002;transform:translateX(calc(-100% - 6px));visibility:hidden;transition:transform .16s ease-out,visibility .16s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}.drawer.open{transform:translateX(0);visibility:visible}.drawer-title{height:45px;flex:0 0 45px;border-bottom:1px solid #908f85;display:flex;align-items:center;gap:7px;padding:0 8px;background:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,#d0cfc7 3px,#d0cfc7 4px)}.drawer-title b{font-size:12px;background:#e9e9e2;padding:2px 4px;white-space:nowrap}.drawer-close{margin-left:auto;background:#e9e9e2;border:1px solid #66665f;width:19px;height:19px;display:grid;place-items:center;padding:0;font-size:14px;line-height:1}.drawer-scroll{overflow-y:auto;overscroll-behavior:contain;flex:1}.drawer-intro{padding:13px 10px 11px;border-bottom:1px solid #cbc9bf;font-size:11px;line-height:1.69;color:#5e5d56}.drawer-group{padding:9px 0 4px}.drawer-group-name{padding:0 10px 8px;font-size:9px;letter-spacing:.09em;color:#77766c;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.drawer-item{display:flex;align-items:center;gap:5px;min-height:33px;padding:7px 9px;border-top:1px solid #d1d0c6;background:transparent;width:100%;text-align:left;font-size:11px;line-height:1.45;border-bottom:0;border-left:0;border-right:0}.drawer-item:hover,.drawer-item:active{background:#d8d9d1}.drawer-item .arr{color:#99978c;margin-left:auto;font-size:11px}.drawer-count{font:9px ui-monospace,Menlo,monospace;color:#99988d;margin-left:auto}.drawer-note{margin:8px 10px;border:1px solid #bbb9ae;background:#f5f4ee;padding:9px;font-size:10px;line-height:1.65;color:#68675f}.drawer-input{width:calc(100% - 20px);margin:11px 10px 4px;border:1px solid #77776e;border-top-color:#53534c;border-left-color:#53534c;box-shadow:inset 1px 1px #c1c0b7;padding:7px 6px;background:#fafaf7;font-size:12px;border-radius:0;outline:none}.drawer-action{margin:8px 10px;font-size:11px;padding:7px;width:calc(100% - 20px);background:#e8e8e1;border:1px solid #5c5c53;box-shadow:inset 1px 1px #fff}.drawer-action.selected{background:#bdc8d4}.drawer-empty{font-size:11px;color:#8b8a80;padding:14px 10px;line-height:1.7}.drawer-bottom{border-top:1px solid #b6b4aa;padding:9px 10px;color:#7f7e75;font:9px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+/* Utilities */
+.content-footer{padding:1px 11px 8px;text-align:center;font:9px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#84837b}.sr-only{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;white-space:nowrap} @media(prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}@media(min-width:650px){body{max-width:440px;margin:0 auto;box-shadow:0 0 0 1px #93938d;position:relative}.rail{left:calc(50% - 220px)}.drawer{left:calc(50% - 220px + var(--rail));--drawer:188px}.scrim{left:calc(50% - 220px + var(--rail));right:calc(50% - 220px)}}
+
+
+
+/* THE WINDWARD READING ROOM • original storybook landscape interface
+   An atmospheric reading environment; no licensed film assets or characters.
+   All app structure remains: rail 43px, 34px keys, drawer max 47vw, original pages. */
+:root{
+ --rail:43px;--drawer:min(47vw,188px);
+ --bg:#ecede0;--chrome:#e8e9da;--chromeLight:#fcf6e7;
+ --paper:#fffaf0;--line:#a5aa91;--dim:#727b6d;--ink:#2e4037;
+ --blue:#4d776c;--soft:#edf0df;
+ --wind-ink:#31473b;--wind-forest:#4d7160;--wind-leaf:#91ad81;
+ --wind-sky:#c1dfe4;--wind-honey:#e6c889;--wind-paper:#fffaf0;
+ --wind-coral:#bc806d;--wind-wood:#8f765b;--wind-surface:#f7f2e5;
+ --wind-line:#b4b7a2;
+}
+html{color-scheme:light}
+body{background:#e7e9dc;color:var(--wind-ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans CJK SC","PingFang SC",sans-serif;-webkit-font-smoothing:antialiased}
+a,button{-webkit-tap-highlight-color:rgba(77,113,96,.13)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #527a61;outline-offset:2px}
+/* A handcrafted narrow cabinet of seven labeled tools. Geometry is unchanged. */
+.rail{background:linear-gradient(90deg,#e9e6d4,#d2dac5 80%,#a4b69a);border-right:1px solid #7d917b;box-shadow:inset 1px 0 #fffbeb,1px 0 1px #61796026}
+.rail-brand{border-color:#b5bea5;margin-bottom:8px}
+.brand-mark{width:27px;height:27px;border:1px solid #667f67;border-radius:8px 8px 5px 5px;background:linear-gradient(130deg,#f6f1ce,#c6d3b1);box-shadow:inset 1px 1px #fff8e4,1px 1px 0 #819c83}
+.brand-mark:before{content:"";position:absolute;left:8px;top:7px;width:9px;height:13px;border:1px solid #607c60;border-radius:9px 9px 0 9px;background:#81a17a;transform:rotate(-38deg)}
+.brand-mark:after{content:"";position:absolute;left:9px;top:9px;width:8px;height:12px;border:0;border-left:1px solid #f5ecd1;background:none;transform:rotate(-30deg);box-shadow:none}
+.rail-button{width:34px;height:34px;margin-bottom:6px;padding:0;background:linear-gradient(160deg,#fff8e5,#e1e5ce);border:1px solid #acb69d;border-bottom-color:#83967d;border-radius:9px 8px 10px 8px;box-shadow:0 1px 0 #fff8ee,inset 1px 1px #fffef3;transition:background .22s ease,transform .22s ease}
+.rail-button svg{width:17px;height:17px;stroke:#546f5d;stroke-width:1.65}
+.rail-button:hover{background:#faf1cf}
+.rail-button:active,.rail-button.active{background:#628771;border:1px solid #406f58;box-shadow:inset 0 1px #3f6652,0 1px #f8f3e2;transform:translateY(1px)}
+.rail-button.active svg{stroke:#fff7e2}
+.rail-button.active:before{content:"";left:-4px;top:10px;width:2px;height:13px;background:#b77658}
+.rail-foot{font-family:Georgia,serif;color:#687963;letter-spacing:.1em;font-size:8px}
+/* The scene is the world behind the interface, not an article illustration. */
+.shell{background:linear-gradient(180deg,#e1eadc 0%,#edf0e2 270px,#e7e9dd 100%);position:relative}
+.app-top{height:49px;position:relative;z-index:1;background:linear-gradient(180deg,rgba(248,248,232,.76),rgba(248,248,232,.12));padding:7px 11px 6px 12px}
+.app-identity b{font-family:Georgia,"Songti SC","Noto Serif CJK SC",serif;font-size:14px;font-weight:700;letter-spacing:.015em;color:#375347}
+.app-identity small{font-family:Georgia,serif;font-size:8.5px;letter-spacing:.11em;color:#6a8075}
+.app-status{font-size:9px;color:#718578}
+.app-status strong{font-size:10px;color:#496e5e;font-weight:650}
+.landscape{height:174px;width:100%;position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(#c4dfe5,#ebead0)}
+.landscape:after{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(225,231,211,.1) 75%,#e5e9dd 100%)}
+.landscape-svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.wind-cloud{transform-origin:center;animation:windCloud 75s ease-in-out infinite alternate}
+.wind-cloud-two{animation-duration:112s;animation-direction:alternate-reverse}
+ .chimney-smoke{animation:smokeBreath 7s ease-in-out infinite alternate}
+ @keyframes smokeBreath{from{opacity:.2;transform:translateY(7px)}to{opacity:.63;transform:translateY(-2px)}}
+@keyframes windCloud{from{transform:translateX(-15px)}to{transform:translateX(20px)}}
+.scene-label{position:absolute;z-index:1;left:12px;top:13px;background:rgba(255,250,225,.79);padding:5px 8px;border-radius:2px 8px 5px 6px;color:#546b5a;font:8px/1.2 Georgia,serif;letter-spacing:.095em;box-shadow:0 1px 1px #79917b20}
+.scene-caption{position:absolute;z-index:1;right:14px;bottom:13px;color:#456a58;font:11px/1.5 Georgia,"Songti SC",serif;text-shadow:0 1px 3px #fff8d9}
+body[data-page="section"] .landscape{height:110px}
+body[data-page="article"] .landscape{height:87px}
+body[data-page="article"] .scene-label{top:9px}
+body[data-page="article"] .scene-caption{bottom:4px;font-size:10px}
+body[data-place="city"] .landscape-svg{filter:saturate(.85) sepia(.07)}
+body[data-place="photography"] .landscape-svg{filter:saturate(.88)}
+body[data-place="media"] .landscape-svg{filter:saturate(.7) hue-rotate(8deg)}
+body[data-place="notes"] .landscape-svg{filter:saturate(.78) sepia(.12)}
+body[data-atmosphere="dusk"] .landscape:before{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(219,147,110,.25),rgba(240,186,115,.17));mix-blend-mode:multiply}
+body[data-atmosphere="dusk"] .shell{background:linear-gradient(180deg,#e9d6bf,#ede6d5 320px,#ebe7d8)}
+body[data-atmosphere="rain"] .landscape:before{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:repeating-linear-gradient(105deg,transparent 0 11px,rgba(233,246,241,.27) 12px,transparent 13px 20px),linear-gradient(rgba(93,137,151,.15),rgba(71,117,132,.16))}
+body[data-atmosphere="rain"] .landscape-svg{filter:contrast(.92) saturate(.65)}
+body[data-atmosphere="rain"] .shell{background:linear-gradient(180deg,#d0dfe0,#edf0e9 320px,#e5e9e2)}
+/* A quiet reading-room window, built as a linen-covered field notebook. */
+.window{margin:0 9px 13px;border:1px solid #aaa995;border-radius:9px 9px 7px 7px;box-shadow:0 2px 0 #d0c6aa,0 8px 18px #536f5e25;background:var(--wind-paper);overflow:hidden}
+.window-title{min-height:29px;padding:4px 7px;gap:5px;border-bottom:1px solid #b4b69d;background:linear-gradient(180deg,#e8e7cd,#d6dfc6 100%)}
+.grip{height:2px;flex:1;min-width:3px;opacity:.6;background:repeating-linear-gradient(90deg,#a8b49a 0 6px,transparent 6px 10px)}
+.window-label{padding:0 5px;background:#e0e4ce;color:#455f4e;font-family:Georgia,"Songti SC",serif;font-weight:650;font-size:11.3px;letter-spacing:.015em}
+.tiny-square{position:relative;width:14px;height:14px;background:#f6f3d9;border:1px solid #96aa8d;border-radius:4px;box-shadow:inset 1px 1px #fffdf0}
+.tiny-square:active{background:#c7d8b8}
+.window-title>.tiny-square:first-child:after{content:"";position:absolute;left:4px;top:4px;width:5px;height:5px;border-left:1.5px solid #668668;border-bottom:1.5px solid #668668;transform:rotate(45deg)}
+.window-title>.title-square:after{content:"";position:absolute;inset:3px;border:1px solid #74927a;border-radius:1px}
+.window-toolbar{min-height:30px;padding:5px 10px;border-bottom:1px solid #e0dfc9;background:#f5f2e5}
+.crumb{font-family:Georgia,"Songti SC",serif;font-size:10px;color:#7e8876}
+.small-button{padding:3px 9px;min-height:21px;background:#ecedda;border:1px solid #a4b89d;border-radius:12px 10px 12px 11px;box-shadow:none;color:#54745e;font-size:10px;font-weight:650}
+.small-button:active{background:#ccd8bf;border:1px solid #779478}
+.window-interior{background:#fffaf0}
+.window-bottom{border-top:1px solid #dedbc2;background:#f3f0e2;color:#81917d;font-family:Georgia,serif}
+.home-intro{position:relative;padding:14px 13px 15px;border-bottom:1px solid #dfdec7;background:linear-gradient(120deg,#fffaf0,#fbf6e8)}
+.home-intro:after{content:"✦";position:absolute;right:14px;top:11px;color:#b6c5a0;font-size:19px;opacity:.75}
+.eyebrow{font-family:Georgia,serif;color:#79917d;font-weight:600;letter-spacing:.13em;font-size:9px}
+.home-intro h1{font-family:Georgia,"Songti SC","Noto Serif CJK SC",serif;color:#365442;font-weight:700;font-size:24px;line-height:1.4;letter-spacing:.01em}
+.home-intro p{font-size:12px;line-height:1.8;color:#687669}
+.bar-caption{background:linear-gradient(90deg,#e7ead5,#f3f1e1);border-bottom:1px solid #d8dcc5;border-top:1px solid #fdf9e8;color:#5d7762;font-size:10px;letter-spacing:.065em}
+.bar-caption span:last-child{color:#9aa690}
+.folder-list,.entry-list{background:#fffaf0}
+.folder-row{border-bottom:1px solid #e5e6d5;min-height:58px}
+.folder-row:active,.folder-row:hover,.entry-row:active{background:#f0f2e3}
+.folder-ico{width:18px;height:14px;border-radius:2px;border:1px solid #9b9b7b;box-shadow:inset 1px 1px #fff9dd;background:#e2d0a0;transform:rotate(-3deg)}
+.folder-ico:before{background:#e2d0a0;border:1px solid #9b9b7b;border-bottom:0;border-radius:3px 3px 0 0;width:8px;height:4px}
+.folder-name{font-weight:650;color:#385342;letter-spacing:.01em}
+.folder-desc{color:#879184}
+.folder-count{color:#879d81}
+.folder-row:nth-child(2) .folder-ico{background:#c7dbce;border-color:#779488}
+.folder-row:nth-child(2) .folder-ico:before{background:#c7dbce;border-color:#779488}
+.folder-row:nth-child(3) .folder-ico{background:#e4c6aa;border-color:#b08c72}
+.folder-row:nth-child(3) .folder-ico:before{background:#e4c6aa;border-color:#b08c72}
+.folder-row:nth-child(4) .folder-ico{background:#d4cbdc;border-color:#a098ad}
+.folder-row:nth-child(4) .folder-ico:before{background:#d4cbdc;border-color:#a098ad}
+.feature{position:relative;padding:15px 12px 15px;background:linear-gradient(125deg,#f1f1db,#faf7e8);border-top:2px solid #dfd2a7}
+.feature:before{content:"";position:absolute;right:11px;top:7px;width:57px;height:57px;opacity:.24;border-radius:55% 45% 60% 40%;background:radial-gradient(ellipse at 40% 40%,#aabf91 0 38%,transparent 39%),radial-gradient(ellipse at 70% 40%,#b3c9a1 0 27%,transparent 28%),radial-gradient(ellipse at 45% 65%,#97b38a 0 38%,transparent 39%);transform:rotate(-21deg);pointer-events:none}
+.feature-label{font:9px/1.5 Georgia,serif;color:#728b72;letter-spacing:.1em}
+.feature h2{font-family:Georgia,"Songti SC",serif;font-size:18px;line-height:1.5;color:#3c6049;font-weight:700}
+.feature p{font-size:12px;line-height:1.8;color:#69776d}
+.text-link{color:#4e7862;border:0;border-bottom:1px solid #83a48b;font-family:Georgia,"Songti SC",serif;font-size:11px;padding-bottom:3px}
+.entry-row{border-bottom:1px solid #e5e6d5}
+.entry-title{font-weight:650;color:#3c5547}
+.entry-sub,.number{color:#879484}
+.section-hero{background:#fbf8eb;border-bottom:1px solid #dfe0c8}
+.section-hero h1{font-family:Georgia,"Songti SC",serif;color:#3b5b4b;font-size:23px;font-weight:700}
+.section-hero p,.section-entry p{color:#768375}
+.section-entry{border-bottom:1px solid #e5e5d5}
+.section-entry:active{background:#eef1e1}
+.section-entry h3{font-family:Georgia,"Songti SC",serif;color:#3b5847;font-weight:700}
+.section-tag{color:#899b80}
+.article-head{background:linear-gradient(130deg,#fffaf0,#fbf7e9);border-bottom:1px solid #e4dec7;padding-top:21px;padding-bottom:18px}
+.article-head h1{font-family:Georgia,"Songti SC","Noto Serif CJK SC",serif;color:#344e41;font-weight:700;font-size:24px;letter-spacing:.005em;line-height:1.42}
+.article-deck{color:#758276;font-family:Georgia,"Songti SC",serif;line-height:1.8}
+.metadata{border-top:1px solid #e1dfcc;color:#8c9788}
+.article-body{background:var(--wind-paper);color:#35463c;letter-spacing:.008em;font-size:var(--fs);line-height:var(--leading);padding-bottom:20px}
+.article-body p{margin:16px 0}
+.article-body h2{font-family:Georgia,"Songti SC",serif;color:#42674d;font-size:19px;font-weight:700;margin-top:30px}
+.article-body h2:before{border-top:2px solid #b6bf9e;width:29px}
+.article-body blockquote{border-left:2px solid #89a284;color:#668172;font-family:Georgia,"Songti SC",serif;background:rgba(220,230,201,.33);padding:9px 11px;border-radius:0 6px 6px 0;margin-left:-3px;margin-right:-3px}
+.article-refs{background:#f3f3e4;border-top:1px solid #dce2d0}
+.article-refs b{font-family:Georgia,"Songti SC",serif;color:#55725d}
+.article-ref{color:#4c7960;border-top:1px solid #dfe4d5}
+.article-ref span{color:#9aaf9a}
+/* The drawer is an opened wooden stationery cabinet: half screen, not a full modal. */
+.scrim{background:rgba(39,58,42,.22)}
+.drawer{width:var(--drawer);max-width:47vw;background:linear-gradient(90deg,#e9e9d2,#f9f5e5);border-right:2px solid #8d9377;border-radius:0 7px 7px 0;box-shadow:2px 0 0 #c7bea0,5px 0 14px #58684b42;transition:transform .25s ease-out,visibility .25s}
+.drawer-title{background:linear-gradient(180deg,#bdc6a1,#dee2bf);border-bottom:1px solid #a4b094}
+.drawer-title b{background:#d1d9b4;border-radius:3px;color:#48644f;font-family:Georgia,"Songti SC",serif;font-size:12px;white-space:nowrap}
+.drawer-close{border:1px solid #96aa8c;border-radius:7px;background:#faf6e4;color:#526d5b;width:19px;height:19px}
+.drawer-close:active{background:#d6dfc6}
+.drawer-intro{color:#6f7d68;border-bottom:1px solid #d7dac5}
+.drawer-group-name{color:#70886f;font-family:Georgia,serif;letter-spacing:.12em}
+.drawer-item{color:#425e4b;border-top:1px solid #dedfce;background:rgba(255,253,241,.4);min-height:33px}
+.drawer-item:hover,.drawer-item:active{background:#d8e3cc}
+.drawer-item .arr,.drawer-count{color:#95a38f}
+.drawer-note{background:#f9f7e8;border:1px solid #d6d8bf;border-radius:4px;color:#788576}
+.drawer-input{background:#fffdf5;border:1px solid #aebba4;box-shadow:inset 1px 1px #e8e9d7;border-radius:4px;color:#3d5845}
+.drawer-input:focus{outline:2px solid #7a9d7b;outline-offset:0}
+.drawer-action{background:#e2ead4;border:1px solid #9bab93;border-radius:6px;box-shadow:none;color:#52745d}
+.drawer-action.selected{background:#c4d7b6}
+.drawer-empty{color:#81907f}
+.drawer-bottom{border-top:1px solid #bdc5ac;background:#e3e8d0;color:#879585}
+.content-footer{font-family:Georgia,serif;color:#879889}
+@media(prefers-reduced-motion:reduce){.wind-cloud,.chimney-smoke,.drawer,.scrim,.rail-button{animation:none!important;transition:none!important}}
+@media(min-width:650px){body{box-shadow:0 0 0 1px #abb4a2}}
+
+
