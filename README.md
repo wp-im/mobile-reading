@@ -6,9 +6,13 @@ Demo: [wordpress.im/mobile-reading](https://wordpress.im/mobile-reading/) · Sou
 
 ## Installation
 
-Install the `reading-0.1.1.zip` theme package, then activate **Reading**. Choose a skin in **Appearance → Customize → Reading 皮肤**. Assign the primary/topics/footer menu locations and any of the eight optional widget areas through WordPress. Empty areas are omitted. No required plugin or build step.
+Install the `reading-0.1.2.zip` theme package, then activate **Reading**. Choose a skin in **Appearance → Customize → Reading 皮肤**. Assign the primary/topics/footer menu locations and any of the eight optional widget areas through WordPress. Empty areas are omitted. No required plugin or build step.
 
 The visual references retain their original CSS, SVG drawings and embedded imagery. WordPress owns posts, pages, categories, archives, search, pagination, comments and site identity. MUJI layouts preserve their distinct markup instead of being flattened into one shell.
+
+## Quick skin preview
+
+Use the footer dropdown to switch immediately between all 27 skins on the current page. The preview URL carries the selected skin through same-site links and search; it does not change the site default. Without JavaScript, choose a skin and press the switch button.
 
 ## 0.1.1 review fixes
 

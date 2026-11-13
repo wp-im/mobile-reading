@@ -281,5 +281,30 @@ function reading_footer_content() {
 	echo '<footer class="reading-footer">';
 	reading_area( 'footer' );
 	reading_drawer_menu( 'footer' );
+	reading_skin_switcher();
 	echo '</footer>';
+}
+
+/** Render a read-only skin preview selector on the current page. */
+function reading_skin_switcher() {
+	?>
+	<form class="reading-skin-switcher" method="get" data-reading-home="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<?php
+		// Preserve search and other scalar query arguments when JavaScript is unavailable.
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only GET form.
+		foreach ( $_GET as $key => $value ) {
+			if ( 'reading_skin' !== $key && is_string( $value ) ) {
+				printf( '<input type="hidden" name="%s" value="%s">', esc_attr( $key ), esc_attr( wp_unslash( $value ) ) );
+			}
+		}
+		?>
+		<label for="reading-skin-select"><?php esc_html_e( '切换皮肤', 'reading' ); ?></label>
+		<select id="reading-skin-select" name="reading_skin">
+			<?php foreach ( reading_skins() as $slug => $skin ) : ?>
+				<option value="<?php echo esc_attr( $slug ); ?>" <?php selected( reading_skin(), $slug ); ?>><?php echo esc_html( $skin['name'] . ' / ' . $slug ); ?></option>
+			<?php endforeach; ?>
+		</select>
+		<button type="submit"><?php esc_html_e( '切换', 'reading' ); ?></button>
+	</form>
+	<?php
 }

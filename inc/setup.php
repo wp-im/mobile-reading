@@ -85,6 +85,13 @@ function reading_sanitize_skin( $value ) {
  * Skin.
  */
 function reading_skin() {
+	// Read-only preview: accept only a registered skin, without saving theme settings.
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Public display preference only.
+	$preview = isset( $_GET['reading_skin'] ) && is_string( $_GET['reading_skin'] ) ? sanitize_key( wp_unslash( $_GET['reading_skin'] ) ) : '';
+	$skins   = reading_skins();
+	if ( isset( $skins[ $preview ] ) ) {
+		return $preview;
+	}
 	return reading_sanitize_skin( get_theme_mod( 'reading_skin', 'reading-platinum' ) ); }
 /**
  * Customize.

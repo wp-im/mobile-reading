@@ -47,3 +47,8 @@ html[style*="--reading-user-font"] .reading-content,html[style*="--reading-user-
 
 /* Classic Editor tables need their own scroll box, including unbreakable cells. */
 .reading-content table{display:block;width:max-content;max-width:100%;overflow-x:auto}
+
+/* Shared footer preview control inherits each skin's type, ink and paper. */
+.reading-wp .reading-skin-switcher{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:16px 0;border-top:1px solid var(--line,#8885);margin-top:12px;font:inherit;color:inherit}
+.reading-wp .reading-skin-switcher select{min-width:0;max-width:100%;width:100%;box-sizing:border-box;padding:8px;font:inherit;color:inherit;background:var(--paper,#fff);border:1px solid var(--line,#888);border-radius:0}
+.reading-skin-switcher button[hidden]{display:none}

@@ -1,3 +1,33 @@
+/* Public skin previews use explicit URLs and leave the site default unchanged. */
+(() => {
+ const form = document.querySelector('.reading-skin-switcher');
+ if (!form) return;
+ const select = form.querySelector('select');
+ const url = new URL(location.href);
+ const skin = url.searchParams.get('reading_skin');
+ select.addEventListener('change', () => {
+  const next = new URL(location.href);
+  next.searchParams.set('reading_skin', select.value);
+  location.assign(next.href);
+ });
+ form.querySelector('button').hidden = true;
+ if (!skin || ![...select.options].some(option => option.value === skin)) return;
+ const home = new URL(form.dataset.readingHome);
+ const inside = target => target.origin === home.origin && target.pathname.startsWith(home.pathname) && !target.pathname.includes('/wp-');
+ document.querySelectorAll('a[href]').forEach(link => {
+  if (link.getAttribute('href').startsWith('#') || link.hasAttribute('download')) return;
+  const target = new URL(link.href, location.href);
+  if (!inside(target)) return;
+  target.searchParams.set('reading_skin', skin);
+  link.href = target.href;
+ });
+ document.querySelectorAll('form').forEach(other => {
+  if (other === form || other.method.toLowerCase() !== 'get' || !inside(new URL(other.action, location.href)) || other.querySelector('[name="reading_skin"]')) return;
+  const input = document.createElement('input');
+  input.type = 'hidden'; input.name = 'reading_skin'; input.value = skin;
+  other.append(input);
+ });
+})();
 /* Native document navigation; only the shared drawer and reading preference need JS. */
 (() => {
  const drawer = document.getElementById('reading-drawer');
@@ -60,7 +90,7 @@
   document.querySelector('[data-reading-arrival-open]')?.addEventListener('click', e => { e.preventDefault(); arrival.showModal(); });
   arrival.querySelectorAll('[data-reading-arrival-close]').forEach(a => a.addEventListener('click', () => arrival.close()));
  }
- const key = 'reading-font:' + rail.querySelector('.reading-brand').href;
+ const key = 'reading-font:' + (document.querySelector('.reading-skin-switcher')?.dataset.readingHome || rail.querySelector('.reading-brand').href);
  function font(size) {
   if (size === 'default') document.documentElement.style.removeProperty('--reading-user-font');
   else if (['14','15','16','17','18'].includes(size)) document.documentElement.style.setProperty('--reading-user-font', size+'px');
